@@ -22,6 +22,10 @@
   color: #09d3ac;
 }
 
-html {
+#nothing {
   background-image: linear-gradient(#fdfddd, #FFFFFF)
+}
+
+.connectButtons {
+    text-align: right;
 }

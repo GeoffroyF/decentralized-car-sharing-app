@@ -14,3 +14,10 @@
     margin-left: 4rem;
     margin-top: 1rem;
 }
+
+.addressShown {
+    text-align: right;
+    display: inline-block;
+    float: right;
+    margin-top: 1rem;
+}
