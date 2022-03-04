@@ -1,0 +1,16 @@
+#logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 4rem;
+    height: 4rem;
+}
+
+.centerClass {
+    text-align: center;
+}
+
+#logoTitle {
+    margin-left: 4rem;
+    margin-top: 1rem;
+}
