@@ -44,7 +44,7 @@ class MainPage extends Component {
                 </DriverPassengerChoice>
             </div>
 
-            <div class="centerClass" style={{ display: this.userType == UserType.PASSENGER ? "block" : "none" }}>
+            <div class="centerClass marketSize" style={{ display: this.userType == UserType.PASSENGER ? "block" : "none" }}>
                 <PassengerMarket/>
             </div>
 

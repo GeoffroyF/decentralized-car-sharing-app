@@ -15,18 +15,18 @@ class PassengerMarket extends Component {
         
     }
 
+
     
     render() {
         return (
-        <div>
+        <div className="blurryBox">
             <Container className="journeys">
             <Row alignItems="center" justifyItems="center" lg={24} md={24} sm={16} xs={8}>
                 <React.Fragment key=".0">
-                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={12}>
-                        <div className="cardSize">
+                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={0}>
+                        <div style={{width: '200px'}}>
                             <Card
                                 description="Click to create a dApp"
-                                selected
                                 title="dApp"
                                 tooltipText="Lorem Ipsum Dole met sai souni lokomit anici trenicid">
                                 <div>
@@ -36,11 +36,10 @@ class PassengerMarket extends Component {
                         </div>
                     </Col>
 
-                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={12}>
+                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={0}>
                         <div style={{width: '200px'}}>
                             <Card
                                 description="Click to create a dApp"
-                                selected
                                 title="dApp"
                                 tooltipText="Lorem Ipsum Dole met sai souni lokomit anici trenicid">
                                 <div>
@@ -50,11 +49,10 @@ class PassengerMarket extends Component {
                         </div>
                     </Col>
 
-                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={12}>
+                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={0}>
                         <div style={{width: '200px'}}>
                             <Card
                                 description="Click to create a dApp"
-                                selected
                                 title="dApp"
                                 tooltipText="Lorem Ipsum Dole met sai souni lokomit anici trenicid">
                                 <div>
@@ -64,11 +62,10 @@ class PassengerMarket extends Component {
                         </div>
                     </Col>
 
-                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={12}>
+                    <Col breakpointsConfig={{lg: 6, md: 6, sm: 4, xs: 2}} span={0}>
                         <div style={{width: '200px'}}>
                             <Card
                                 description="Click to create a dApp"
-                                selected
                                 title="dApp"
                                 tooltipText="Lorem Ipsum Dole met sai souni lokomit anici trenicid">
                                 <div>
