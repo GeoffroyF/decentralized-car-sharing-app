@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
 import MainPage from "./components/main-page-component/main-page-component";
-
+import JourneyService from "./services/journey-service";
 import * as uiKit from "web3uikit";
 
 
@@ -38,6 +38,10 @@ class App extends Component {
 
             // Set web3, accounts, and contract to the state, and then proceed with an
             // example of interacting with the contract's methods.
+            //JourneyService.initContract(web3);
+
+            const journeyService = new JourneyService();
+            journeyService.initContract(web3);
             this.setState({ web3, accounts});
 
         } 

@@ -39,12 +39,12 @@ class MainPage extends Component {
                     <p className="addressShown">Account: {window.ethereum.selectedAddress}</p>
                 </Col>
             </Row>
-            <div class="centerClass" style={{ display: this.userType ? "none" : "block" }}>
+            <div className="centerClass" style={{ display: this.userType ? "none" : "block" }}>
                 <DriverPassengerChoice parentCallback = {this.callBackFromDriverPassengerChoice}>
                 </DriverPassengerChoice>
             </div>
 
-            <div class="centerClass marketSize" style={{ display: this.userType == UserType.PASSENGER ? "block" : "none" }}>
+            <div className="centerClass marketSize" style={{ display: this.userType == UserType.PASSENGER ? "block" : "none" }}>
                 <PassengerMarket/>
             </div>
 

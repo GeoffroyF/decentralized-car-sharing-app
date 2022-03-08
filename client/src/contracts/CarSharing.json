@@ -1,0 +1,3027 @@
+{
+  "contractName": "CarSharing",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "candidates",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "departure",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "arrival",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "seatNumber",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "jouneyCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "seatNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "ownerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "generateSeatsForNewJourney",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isForSale",
+              "type": "bool"
+            },
+            {
+              "internalType": "address",
+              "name": "seat_owner",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct CarSharing.Seat[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"candidates\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"departure\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"arrival\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"seatNumber\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"seatNumber\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"ownerAddress\",\"type\":\"address\"}],\"name\":\"generateSeatsForNewJourney\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isForSale\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"seat_owner\",\"type\":\"address\"}],\"internalType\":\"struct CarSharing.Seat[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"jouneyCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CarSharing.sol\":\"CarSharing\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CarSharing.sol\":{\"keccak256\":\"0x934acc18a580bed85b1adec054511a8eb3eb35003e621e69ea64baefb1291c5d\",\"urls\":[\"bzz-raw://0e719d0caa540e8fa2375a46cd9fa98c4f0e0baa40969f0bf80a4861ede29070\",\"dweb:/ipfs/Qmcob6mN23bLL9Bdx8uqu78EFg5hVmdrkp8yKAGSe98RWX\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610769806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806304e49204146100465780633477ee2e14610064578063572145ba14610098575b600080fd5b61004e6100c8565b60405161005b9190610594565b60405180910390f35b61007e600480360361007991908101906103e0565b6100ce565b60405161008f9594939291906105af565b60405180910390f35b6100b260048036036100ad9190810190610409565b6102cc565b6040516100bf9190610572565b60405180910390f35b60005481565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101805780601f1061015557610100808354040283529160200191610180565b820191906000526020600020905b81548152906001019060200180831161016357829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561021e5780601f106101f35761010080835404028352916020019161021e565b820191906000526020600020905b81548152906001019060200180831161020157829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102bc5780601f10610291576101008083540402835291602001916102bc565b820191906000526020600020905b81548152906001019060200180831161029f57829003601f168201915b5050505050908060040154905085565b6060808360405190808252806020026020018201604052801561030957816020015b6102f661037d565b8152602001906001900390816102ee5790505b50905060008090505b848110156103725760405180606001604052808281526020016001151581526020018573ffffffffffffffffffffffffffffffffffffffff1681525082828151811061035a57fe5b60200260200101819052508080600101915050610312565b508091505092915050565b604051806060016040528060008152602001600015158152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b6000813590506103c5816106f8565b92915050565b6000813590506103da8161070f565b92915050565b6000602082840312156103f257600080fd5b6000610400848285016103cb565b91505092915050565b6000806040838503121561041c57600080fd5b600061042a858286016103cb565b925050602061043b858286016103b6565b9150509250929050565b60006104518383610512565b60608301905092915050565b6104668161066c565b82525050565b600061047782610627565b610481818561064a565b935061048c83610617565b8060005b838110156104bd5781516104a48882610445565b97506104af8361063d565b925050600181019050610490565b5085935050505092915050565b6104d38161067e565b82525050565b60006104e482610632565b6104ee818561065b565b93506104fe8185602086016106b4565b610507816106e7565b840191505092915050565b6060820160008201516105286000850182610554565b50602082015161053b60208501826104ca565b50604082015161054e604085018261045d565b50505050565b61055d816106aa565b82525050565b61056c816106aa565b82525050565b6000602082019050818103600083015261058c818461046c565b905092915050565b60006020820190506105a96000830184610563565b92915050565b600060a0820190506105c46000830188610563565b81810360208301526105d681876104d9565b905081810360408301526105ea81866104d9565b905081810360608301526105fe81856104d9565b905061060d6080830184610563565b9695505050505050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b60006106778261068a565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60005b838110156106d25780820151818401526020810190506106b7565b838111156106e1576000848401525b50505050565b6000601f19601f8301169050919050565b6107018161066c565b811461070c57600080fd5b50565b610718816106aa565b811461072357600080fd5b5056fea365627a7a72315820659cd3b81f9b110124b8b74145f5b8e9cbd5e02eaab6f660b28fd49de40ec5f76c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806304e49204146100465780633477ee2e14610064578063572145ba14610098575b600080fd5b61004e6100c8565b60405161005b9190610594565b60405180910390f35b61007e600480360361007991908101906103e0565b6100ce565b60405161008f9594939291906105af565b60405180910390f35b6100b260048036036100ad9190810190610409565b6102cc565b6040516100bf9190610572565b60405180910390f35b60005481565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101805780601f1061015557610100808354040283529160200191610180565b820191906000526020600020905b81548152906001019060200180831161016357829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561021e5780601f106101f35761010080835404028352916020019161021e565b820191906000526020600020905b81548152906001019060200180831161020157829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102bc5780601f10610291576101008083540402835291602001916102bc565b820191906000526020600020905b81548152906001019060200180831161029f57829003601f168201915b5050505050908060040154905085565b6060808360405190808252806020026020018201604052801561030957816020015b6102f661037d565b8152602001906001900390816102ee5790505b50905060008090505b848110156103725760405180606001604052808281526020016001151581526020018573ffffffffffffffffffffffffffffffffffffffff1681525082828151811061035a57fe5b60200260200101819052508080600101915050610312565b508091505092915050565b604051806060016040528060008152602001600015158152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b6000813590506103c5816106f8565b92915050565b6000813590506103da8161070f565b92915050565b6000602082840312156103f257600080fd5b6000610400848285016103cb565b91505092915050565b6000806040838503121561041c57600080fd5b600061042a858286016103cb565b925050602061043b858286016103b6565b9150509250929050565b60006104518383610512565b60608301905092915050565b6104668161066c565b82525050565b600061047782610627565b610481818561064a565b935061048c83610617565b8060005b838110156104bd5781516104a48882610445565b97506104af8361063d565b925050600181019050610490565b5085935050505092915050565b6104d38161067e565b82525050565b60006104e482610632565b6104ee818561065b565b93506104fe8185602086016106b4565b610507816106e7565b840191505092915050565b6060820160008201516105286000850182610554565b50602082015161053b60208501826104ca565b50604082015161054e604085018261045d565b50505050565b61055d816106aa565b82525050565b61056c816106aa565b82525050565b6000602082019050818103600083015261058c818461046c565b905092915050565b60006020820190506105a96000830184610563565b92915050565b600060a0820190506105c46000830188610563565b81810360208301526105d681876104d9565b905081810360408301526105ea81866104d9565b905081810360608301526105fe81856104d9565b905061060d6080830184610563565b9695505050505050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b60006106778261068a565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60005b838110156106d25780820151818401526020810190506106b7565b838111156106e1576000848401525b50505050565b6000601f19601f8301169050919050565b6107018161066c565b811461070c57600080fd5b50565b610718816106aa565b811461072357600080fd5b5056fea365627a7a72315820659cd3b81f9b110124b8b74145f5b8e9cbd5e02eaab6f660b28fd49de40ec5f76c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "108:1666:0:-;;;450:158;8:9:-1;5:2;;;30:1;27;20:12;5:2;450:158:0;108:1666;;;;;;",
+  "deployedSourceMap": "108:1666:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;108:1666:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;137:23;;;:::i;:::-;;;;;;;;;;;;;;;;616:42;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;667:308;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;137:23;;;;:::o;616:42::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;667:308::-;762:13;787:19;820:10;809:22;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;787:44;;847:6;856:1;847:10;;842:103;863:10;859:1;:14;842:103;;;906:27;;;;;;;;911:1;906:27;;;;914:4;906:27;;;;;;920:12;906:27;;;;;895:5;901:1;895:8;;;;;;;;;;;;;:38;;;;875:3;;;;;;;842:103;;;;962:5;955:12;;;667:308;;;;:::o;108:1666::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;;;57:78;;;;;142:130;;222:6;209:20;200:29;;234:33;261:5;234:33;;;194:78;;;;;279:241;;383:2;371:9;362:7;358:23;354:32;351:2;;;399:1;396;389:12;351:2;434:1;451:53;496:7;487:6;476:9;472:22;451:53;;;441:63;;413:97;345:175;;;;;527:366;;;648:2;636:9;627:7;623:23;619:32;616:2;;;664:1;661;654:12;616:2;699:1;716:53;761:7;752:6;741:9;737:22;716:53;;;706:63;;678:97;806:2;824:53;869:7;860:6;849:9;845:22;824:53;;;814:63;;785:98;610:283;;;;;;901:241;;1020:82;1098:3;1090:6;1020:82;;;1131:4;1126:3;1122:14;1108:28;;1013:129;;;;;1150:103;1223:24;1241:5;1223:24;;;1218:3;1211:37;1205:48;;;1321:818;;1498:70;1562:5;1498:70;;;1581:102;1676:6;1671:3;1581:102;;;1574:109;;1704:72;1770:5;1704:72;;;1796:7;1824:1;1809:308;1834:6;1831:1;1828:13;1809:308;;;1901:6;1895:13;1922:95;2013:3;1998:13;1922:95;;;1915:102;;2034:76;2103:6;2034:76;;;2024:86;;1866:251;1856:1;1853;1849:9;1844:14;;1809:308;;;1813:14;2130:3;2123:10;;1477:662;;;;;;;;2147:94;2214:21;2229:5;2214:21;;;2209:3;2202:34;2196:45;;;2248:339;;2356:35;2385:5;2356:35;;;2403:71;2467:6;2462:3;2403:71;;;2396:78;;2479:52;2524:6;2519:3;2512:4;2505:5;2501:16;2479:52;;;2552:29;2574:6;2552:29;;;2547:3;2543:39;2536:46;;2336:251;;;;;;2649:609;2768:4;2763:3;2759:14;2849:4;2842:5;2838:16;2832:23;2861:63;2918:4;2913:3;2909:14;2895:12;2861:63;;;2788:142;3008:4;3001:5;2997:16;2991:23;3020:57;3071:4;3066:3;3062:14;3048:12;3020:57;;;2940:143;3162:4;3155:5;3151:16;3145:23;3174:63;3231:4;3226:3;3222:14;3208:12;3174:63;;;3093:150;2741:517;;;;3265:103;3338:24;3356:5;3338:24;;;3333:3;3326:37;3320:48;;;3375:113;3458:24;3476:5;3458:24;;;3453:3;3446:37;3440:48;;;3495:425;;3695:2;3684:9;3680:18;3672:26;;3745:9;3739:4;3735:20;3731:1;3720:9;3716:17;3709:47;3770:140;3905:4;3896:6;3770:140;;;3762:148;;3666:254;;;;;3927:213;;4045:2;4034:9;4030:18;4022:26;;4059:71;4127:1;4116:9;4112:17;4103:6;4059:71;;;4016:124;;;;;4147:899;;4425:3;4414:9;4410:19;4402:27;;4440:71;4508:1;4497:9;4493:17;4484:6;4440:71;;;4559:9;4553:4;4549:20;4544:2;4533:9;4529:18;4522:48;4584:74;4653:4;4644:6;4584:74;;;4576:82;;4706:9;4700:4;4696:20;4691:2;4680:9;4676:18;4669:48;4731:74;4800:4;4791:6;4731:74;;;4723:82;;4853:9;4847:4;4843:20;4838:2;4827:9;4823:18;4816:48;4878:74;4947:4;4938:6;4878:74;;;4870:82;;4963:73;5031:3;5020:9;5016:19;5007:6;4963:73;;;4396:650;;;;;;;;;5053:167;;5155:3;5147:11;;5193:4;5188:3;5184:14;5176:22;;5141:79;;;;5227:153;;5352:5;5346:12;5336:22;;5317:63;;;;5387:118;;5477:5;5471:12;5461:22;;5442:63;;;;5512:124;;5626:4;5621:3;5617:14;5609:22;;5603:33;;;;5644:194;;5790:6;5785:3;5778:19;5827:4;5822:3;5818:14;5803:29;;5771:67;;;;;5847:163;;5962:6;5957:3;5950:19;5999:4;5994:3;5990:14;5975:29;;5943:67;;;;;6018:91;;6080:24;6098:5;6080:24;;;6069:35;;6063:46;;;;6116:85;;6189:5;6182:13;6175:21;6164:32;;6158:43;;;;6208:121;;6281:42;6274:5;6270:54;6259:65;;6253:76;;;;6336:72;;6398:5;6387:16;;6381:27;;;;6416:268;6481:1;6488:101;6502:6;6499:1;6496:13;6488:101;;;6578:1;6573:3;6569:11;6563:18;6559:1;6554:3;6550:11;6543:39;6524:2;6521:1;6517:10;6512:15;;6488:101;;;6604:6;6601:1;6598:13;6595:2;;;6669:1;6660:6;6655:3;6651:16;6644:27;6595:2;6465:219;;;;;6692:97;;6780:2;6776:7;6771:2;6764:5;6760:14;6756:28;6746:38;;6740:49;;;;6797:117;6866:24;6884:5;6866:24;;;6859:5;6856:35;6846:2;;6905:1;6902;6895:12;6846:2;6840:74;;6921:117;6990:24;7008:5;6990:24;;;6983:5;6980:35;6970:2;;7029:1;7026;7019:12;6970:2;6964:74;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <=0.8.12;\r\npragma experimental ABIEncoderV2;\r\n\r\n\r\ncontract CarSharing {\r\n\r\n    uint public jouneyCount;\r\n\r\n    struct Seat {\r\n        uint id;\r\n        bool isForSale;\r\n        address seat_owner;\r\n    }\r\n\r\n    struct Journey {\r\n        uint id;\r\n        string departure;\r\n        string arrival;\r\n        string description;\r\n        uint seatNumber;\r\n        Seat[] seats;\r\n    }\r\n\r\n\r\n    constructor() public  {\r\n        //addJourney( \"Dijon\", \"Lyon\", \"Vers Lyon part Dieu en twingo jaune\", 3, generateSeatsForNewJourney(3, ownerAddress));\r\n    }\r\n\r\n    mapping(uint => Journey) public candidates;\r\n\r\n    function generateSeatsForNewJourney(uint seatNumber, address ownerAddress) public pure returns(Seat[] memory){\r\n        Seat[] memory seats = new Seat[](seatNumber);\r\n        for (uint i = 0; i < seatNumber; i++) {\r\n            seats[i] = Seat(i, true, ownerAddress);\r\n        }\r\n        return seats;\r\n    }\r\n\r\n    function addJourney(string memory _departure, \r\n        string memory _arrival, \r\n        string memory _description, \r\n        uint _seatNumber,\r\n        Seat[] memory _seats) private {\r\n        jouneyCount ++;\r\n        candidates[jouneyCount] = Journey(jouneyCount, _arrival, _departure, _description, _seatNumber, _seats);\r\n    }\r\n\r\n\r\n    // function vote (uint _candidateId) public {\r\n    //     // require that they haven't voted before\r\n    //     require(!voters[msg.sender]);\r\n\r\n    //     // require a valid candidate\r\n    //     require(_candidateId > 0 && _candidateId <= jouneyCount);\r\n\r\n    //     // record that voter has voted\r\n    //     voters[msg.sender] = true;\r\n\r\n    //     // update candidate vote Count\r\n    //     candidates[_candidateId].voteCount ++;\r\n    // }\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\gdefe\\Projects\\Blockchain\\CarSharingDapp\\contracts\\CarSharing.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/CarSharing.sol",
+    "exportedSymbols": {
+      "CarSharing": [
+        110
+      ]
+    },
+    "id": 111,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<=",
+          "0.8",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:34:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "69:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 110,
+        "linearizedBaseContracts": [
+          110
+        ],
+        "name": "CarSharing",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "jouneyCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 110,
+            "src": "137:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "CarSharing.Seat",
+            "id": 11,
+            "members": [
+              {
+                "constant": false,
+                "id": 6,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "192:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "192:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "name": "isForSale",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "210:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "210:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "seat_owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "235:18:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "235:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Seat",
+            "nodeType": "StructDefinition",
+            "scope": 110,
+            "src": "169:92:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "CarSharing.Journey",
+            "id": 25,
+            "members": [
+              {
+                "constant": false,
+                "id": 13,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "295:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "295:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15,
+                "name": "departure",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "313:16:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 14,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "313:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 17,
+                "name": "arrival",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "340:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 16,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "340:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 19,
+                "name": "description",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "365:18:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "365:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "seatNumber",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "394:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "394:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 24,
+                "name": "seats",
+                "nodeType": "VariableDeclaration",
+                "scope": 25,
+                "src": "420:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                  "typeString": "struct CarSharing.Seat[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "contractScope": null,
+                    "id": 22,
+                    "name": "Seat",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 11,
+                    "src": "420:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Seat_$11_storage_ptr",
+                      "typeString": "struct CarSharing.Seat"
+                    }
+                  },
+                  "id": 23,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "420:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                    "typeString": "struct CarSharing.Seat[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Journey",
+            "nodeType": "StructDefinition",
+            "scope": 110,
+            "src": "269:171:0",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "472:136:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 29,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "461:2:0"
+            },
+            "returnParameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "472:0:0"
+            },
+            "scope": 110,
+            "src": "450:158:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 33,
+            "name": "candidates",
+            "nodeType": "VariableDeclaration",
+            "scope": 110,
+            "src": "616:42:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Journey_$25_storage_$",
+              "typeString": "mapping(uint256 => struct CarSharing.Journey)"
+            },
+            "typeName": {
+              "id": 32,
+              "keyType": {
+                "id": 30,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "624:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "616:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Journey_$25_storage_$",
+                "typeString": "mapping(uint256 => struct CarSharing.Journey)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 31,
+                "name": "Journey",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 25,
+                "src": "632:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Journey_$25_storage_ptr",
+                  "typeString": "struct CarSharing.Journey"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "776:199:0",
+              "statements": [
+                {
+                  "assignments": [
+                    46
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 46,
+                      "name": "seats",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 77,
+                      "src": "787:19:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                        "typeString": "struct CarSharing.Seat[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "contractScope": null,
+                          "id": 44,
+                          "name": "Seat",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 11,
+                          "src": "787:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Seat_$11_storage_ptr",
+                            "typeString": "struct CarSharing.Seat"
+                          }
+                        },
+                        "id": 45,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "787:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                          "typeString": "struct CarSharing.Seat[]"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 52,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 50,
+                        "name": "seatNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 35,
+                        "src": "820:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 49,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "809:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Seat_$11_memory_$dyn_memory_$",
+                        "typeString": "function (uint256) pure returns (struct CarSharing.Seat memory[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "contractScope": null,
+                          "id": 47,
+                          "name": "Seat",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 11,
+                          "src": "813:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Seat_$11_storage_ptr",
+                            "typeString": "struct CarSharing.Seat"
+                          }
+                        },
+                        "id": 48,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "813:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                          "typeString": "struct CarSharing.Seat[]"
+                        }
+                      }
+                    },
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "809:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory",
+                      "typeString": "struct CarSharing.Seat memory[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "787:44:0"
+                },
+                {
+                  "body": {
+                    "id": 73,
+                    "nodeType": "Block",
+                    "src": "880:65:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 71,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 63,
+                              "name": "seats",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 46,
+                              "src": "895:5:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                                "typeString": "struct CarSharing.Seat memory[] memory"
+                              }
+                            },
+                            "id": 65,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 64,
+                              "name": "i",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 54,
+                              "src": "901:1:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "895:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Seat_$11_memory",
+                              "typeString": "struct CarSharing.Seat memory"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 67,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 54,
+                                "src": "911:1:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "74727565",
+                                "id": 68,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "bool",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "914:4:0",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                "value": "true"
+                              },
+                              {
+                                "argumentTypes": null,
+                                "id": 69,
+                                "name": "ownerAddress",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 37,
+                                "src": "920:12:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 66,
+                              "name": "Seat",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 11,
+                              "src": "906:4:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_struct$_Seat_$11_storage_ptr_$",
+                                "typeString": "type(struct CarSharing.Seat storage pointer)"
+                              }
+                            },
+                            "id": 70,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "structConstructorCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "906:27:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Seat_$11_memory",
+                              "typeString": "struct CarSharing.Seat memory"
+                            }
+                          },
+                          "src": "895:38:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Seat_$11_memory",
+                            "typeString": "struct CarSharing.Seat memory"
+                          }
+                        },
+                        "id": 72,
+                        "nodeType": "ExpressionStatement",
+                        "src": "895:38:0"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 57,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 54,
+                      "src": "859:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 58,
+                      "name": "seatNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 35,
+                      "src": "863:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "859:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 74,
+                  "initializationExpression": {
+                    "assignments": [
+                      54
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 54,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 74,
+                        "src": "847:6:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 53,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "847:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 56,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 55,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "856:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "847:10:0"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 61,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "875:3:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 60,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 54,
+                        "src": "875:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 62,
+                    "nodeType": "ExpressionStatement",
+                    "src": "875:3:0"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "842:103:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 75,
+                    "name": "seats",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 46,
+                    "src": "962:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                      "typeString": "struct CarSharing.Seat memory[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 42,
+                  "id": 76,
+                  "nodeType": "Return",
+                  "src": "955:12:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 78,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateSeatsForNewJourney",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "name": "seatNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "703:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "703:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 37,
+                  "name": "ownerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "720:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "720:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "702:39:0"
+            },
+            "returnParameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "762:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                    "typeString": "struct CarSharing.Seat[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 39,
+                      "name": "Seat",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 11,
+                      "src": "762:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Seat_$11_storage_ptr",
+                        "typeString": "struct CarSharing.Seat"
+                      }
+                    },
+                    "id": 40,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "762:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                      "typeString": "struct CarSharing.Seat[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "761:15:0"
+            },
+            "scope": 110,
+            "src": "667:308:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 108,
+              "nodeType": "Block",
+              "src": "1168:147:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 93,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1179:14:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 92,
+                      "name": "jouneyCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "1179:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 94,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1179:14:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 95,
+                        "name": "candidates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 33,
+                        "src": "1204:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Journey_$25_storage_$",
+                          "typeString": "mapping(uint256 => struct CarSharing.Journey storage ref)"
+                        }
+                      },
+                      "id": 97,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "jouneyCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "1215:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1204:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Journey_$25_storage",
+                        "typeString": "struct CarSharing.Journey storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "name": "jouneyCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4,
+                          "src": "1238:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 100,
+                          "name": "_arrival",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 82,
+                          "src": "1251:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_departure",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "1261:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 102,
+                          "name": "_description",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 84,
+                          "src": "1273:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 103,
+                          "name": "_seatNumber",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 86,
+                          "src": "1287:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 104,
+                          "name": "_seats",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 89,
+                          "src": "1300:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                            "typeString": "struct CarSharing.Seat memory[] memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                            "typeString": "struct CarSharing.Seat memory[] memory"
+                          }
+                        ],
+                        "id": 98,
+                        "name": "Journey",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 25,
+                        "src": "1230:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Journey_$25_storage_ptr_$",
+                          "typeString": "type(struct CarSharing.Journey storage pointer)"
+                        }
+                      },
+                      "id": 105,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1230:77:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Journey_$25_memory",
+                        "typeString": "struct CarSharing.Journey memory"
+                      }
+                    },
+                    "src": "1204:103:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Journey_$25_storage",
+                      "typeString": "struct CarSharing.Journey storage ref"
+                    }
+                  },
+                  "id": 107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1204:103:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 109,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addJourney",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_departure",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1003:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1003:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 82,
+                  "name": "_arrival",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1039:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 81,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1039:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84,
+                  "name": "_description",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1073:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 83,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 86,
+                  "name": "_seatNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1111:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 89,
+                  "name": "_seats",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1138:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                    "typeString": "struct CarSharing.Seat[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 87,
+                      "name": "Seat",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 11,
+                      "src": "1138:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Seat_$11_storage_ptr",
+                        "typeString": "struct CarSharing.Seat"
+                      }
+                    },
+                    "id": 88,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1138:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Seat_$11_storage_$dyn_storage_ptr",
+                      "typeString": "struct CarSharing.Seat[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1002:157:0"
+            },
+            "returnParameters": {
+              "id": 91,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1168:0:0"
+            },
+            "scope": 110,
+            "src": "983:332:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          }
+        ],
+        "scope": 111,
+        "src": "108:1666:0"
+      }
+    ],
+    "src": "33:1743:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/CarSharing.sol",
+      "exportedSymbols": {
+        "CarSharing": [
+          110
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<=",
+            "0.8",
+            ".12"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:34:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "69:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            110
+          ],
+          "name": "CarSharing",
+          "scope": 111
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "jouneyCount",
+              "scope": 110,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 3,
+                "name": "ElementaryTypeName",
+                "src": "137:4:0"
+              }
+            ],
+            "id": 4,
+            "name": "VariableDeclaration",
+            "src": "137:23:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "CarSharing.Seat",
+              "name": "Seat",
+              "scope": 110,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "id",
+                  "scope": 11,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "192:4:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "192:7:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "isForSale",
+                  "scope": 11,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 7,
+                    "name": "ElementaryTypeName",
+                    "src": "210:4:0"
+                  }
+                ],
+                "id": 8,
+                "name": "VariableDeclaration",
+                "src": "210:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "seat_owner",
+                  "scope": 11,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 9,
+                    "name": "ElementaryTypeName",
+                    "src": "235:7:0"
+                  }
+                ],
+                "id": 10,
+                "name": "VariableDeclaration",
+                "src": "235:18:0"
+              }
+            ],
+            "id": 11,
+            "name": "StructDefinition",
+            "src": "169:92:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "CarSharing.Journey",
+              "name": "Journey",
+              "scope": 110,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "id",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 12,
+                    "name": "ElementaryTypeName",
+                    "src": "295:4:0"
+                  }
+                ],
+                "id": 13,
+                "name": "VariableDeclaration",
+                "src": "295:7:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "departure",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 14,
+                    "name": "ElementaryTypeName",
+                    "src": "313:6:0"
+                  }
+                ],
+                "id": 15,
+                "name": "VariableDeclaration",
+                "src": "313:16:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "arrival",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 16,
+                    "name": "ElementaryTypeName",
+                    "src": "340:6:0"
+                  }
+                ],
+                "id": 17,
+                "name": "VariableDeclaration",
+                "src": "340:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "description",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 18,
+                    "name": "ElementaryTypeName",
+                    "src": "365:6:0"
+                  }
+                ],
+                "id": 19,
+                "name": "VariableDeclaration",
+                "src": "365:18:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "seatNumber",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 20,
+                    "name": "ElementaryTypeName",
+                    "src": "394:4:0"
+                  }
+                ],
+                "id": 21,
+                "name": "VariableDeclaration",
+                "src": "394:15:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "seats",
+                  "scope": 25,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "struct CarSharing.Seat[]",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "struct CarSharing.Seat[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Seat",
+                          "referencedDeclaration": 11,
+                          "type": "struct CarSharing.Seat"
+                        },
+                        "id": 22,
+                        "name": "UserDefinedTypeName",
+                        "src": "420:4:0"
+                      }
+                    ],
+                    "id": 23,
+                    "name": "ArrayTypeName",
+                    "src": "420:6:0"
+                  }
+                ],
+                "id": 24,
+                "name": "VariableDeclaration",
+                "src": "420:12:0"
+              }
+            ],
+            "id": 25,
+            "name": "StructDefinition",
+            "src": "269:171:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 110,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 26,
+                "name": "ParameterList",
+                "src": "461:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27,
+                "name": "ParameterList",
+                "src": "472:0:0"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28,
+                "name": "Block",
+                "src": "472:136:0"
+              }
+            ],
+            "id": 29,
+            "name": "FunctionDefinition",
+            "src": "450:158:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "candidates",
+              "scope": 110,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct CarSharing.Journey)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct CarSharing.Journey)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 30,
+                    "name": "ElementaryTypeName",
+                    "src": "624:4:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Journey",
+                      "referencedDeclaration": 25,
+                      "type": "struct CarSharing.Journey"
+                    },
+                    "id": 31,
+                    "name": "UserDefinedTypeName",
+                    "src": "632:7:0"
+                  }
+                ],
+                "id": 32,
+                "name": "Mapping",
+                "src": "616:24:0"
+              }
+            ],
+            "id": 33,
+            "name": "VariableDeclaration",
+            "src": "616:42:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "generateSeatsForNewJourney",
+              "scope": 110,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "seatNumber",
+                      "scope": 78,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 34,
+                        "name": "ElementaryTypeName",
+                        "src": "703:4:0"
+                      }
+                    ],
+                    "id": 35,
+                    "name": "VariableDeclaration",
+                    "src": "703:15:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "ownerAddress",
+                      "scope": 78,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 36,
+                        "name": "ElementaryTypeName",
+                        "src": "720:7:0"
+                      }
+                    ],
+                    "id": 37,
+                    "name": "VariableDeclaration",
+                    "src": "720:20:0"
+                  }
+                ],
+                "id": 38,
+                "name": "ParameterList",
+                "src": "702:39:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 78,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct CarSharing.Seat[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "struct CarSharing.Seat[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Seat",
+                              "referencedDeclaration": 11,
+                              "type": "struct CarSharing.Seat"
+                            },
+                            "id": 39,
+                            "name": "UserDefinedTypeName",
+                            "src": "762:4:0"
+                          }
+                        ],
+                        "id": 40,
+                        "name": "ArrayTypeName",
+                        "src": "762:6:0"
+                      }
+                    ],
+                    "id": 41,
+                    "name": "VariableDeclaration",
+                    "src": "762:13:0"
+                  }
+                ],
+                "id": 42,
+                "name": "ParameterList",
+                "src": "761:15:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        46
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "seats",
+                          "scope": 77,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct CarSharing.Seat[]",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "length": null,
+                              "type": "struct CarSharing.Seat[]"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "contractScope": null,
+                                  "name": "Seat",
+                                  "referencedDeclaration": 11,
+                                  "type": "struct CarSharing.Seat"
+                                },
+                                "id": 44,
+                                "name": "UserDefinedTypeName",
+                                "src": "787:4:0"
+                              }
+                            ],
+                            "id": 45,
+                            "name": "ArrayTypeName",
+                            "src": "787:6:0"
+                          }
+                        ],
+                        "id": 46,
+                        "name": "VariableDeclaration",
+                        "src": "787:19:0"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "struct CarSharing.Seat memory[] memory",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "function (uint256) pure returns (struct CarSharing.Seat memory[] memory)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "length": null,
+                                  "type": "struct CarSharing.Seat[]"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "Seat",
+                                      "referencedDeclaration": 11,
+                                      "type": "struct CarSharing.Seat"
+                                    },
+                                    "id": 47,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "813:4:0"
+                                  }
+                                ],
+                                "id": 48,
+                                "name": "ArrayTypeName",
+                                "src": "813:6:0"
+                              }
+                            ],
+                            "id": 49,
+                            "name": "NewExpression",
+                            "src": "809:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 35,
+                              "type": "uint256",
+                              "value": "seatNumber"
+                            },
+                            "id": 50,
+                            "name": "Identifier",
+                            "src": "820:10:0"
+                          }
+                        ],
+                        "id": 51,
+                        "name": "FunctionCall",
+                        "src": "809:22:0"
+                      }
+                    ],
+                    "id": 52,
+                    "name": "VariableDeclarationStatement",
+                    "src": "787:44:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "assignments": [
+                            54
+                          ]
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "constant": false,
+                              "name": "i",
+                              "scope": 74,
+                              "stateVariable": false,
+                              "storageLocation": "default",
+                              "type": "uint256",
+                              "value": null,
+                              "visibility": "internal"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "uint",
+                                  "type": "uint256"
+                                },
+                                "id": 53,
+                                "name": "ElementaryTypeName",
+                                "src": "847:4:0"
+                              }
+                            ],
+                            "id": 54,
+                            "name": "VariableDeclaration",
+                            "src": "847:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 55,
+                            "name": "Literal",
+                            "src": "856:1:0"
+                          }
+                        ],
+                        "id": 56,
+                        "name": "VariableDeclarationStatement",
+                        "src": "847:10:0"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "<",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 54,
+                              "type": "uint256",
+                              "value": "i"
+                            },
+                            "id": 57,
+                            "name": "Identifier",
+                            "src": "859:1:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 35,
+                              "type": "uint256",
+                              "value": "seatNumber"
+                            },
+                            "id": 58,
+                            "name": "Identifier",
+                            "src": "863:10:0"
+                          }
+                        ],
+                        "id": 59,
+                        "name": "BinaryOperation",
+                        "src": "859:14:0"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 54,
+                                  "type": "uint256",
+                                  "value": "i"
+                                },
+                                "id": 60,
+                                "name": "Identifier",
+                                "src": "875:1:0"
+                              }
+                            ],
+                            "id": 61,
+                            "name": "UnaryOperation",
+                            "src": "875:3:0"
+                          }
+                        ],
+                        "id": 62,
+                        "name": "ExpressionStatement",
+                        "src": "875:3:0"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "struct CarSharing.Seat memory"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "type": "struct CarSharing.Seat memory"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 46,
+                                          "type": "struct CarSharing.Seat memory[] memory",
+                                          "value": "seats"
+                                        },
+                                        "id": 63,
+                                        "name": "Identifier",
+                                        "src": "895:5:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 54,
+                                          "type": "uint256",
+                                          "value": "i"
+                                        },
+                                        "id": 64,
+                                        "name": "Identifier",
+                                        "src": "901:1:0"
+                                      }
+                                    ],
+                                    "id": 65,
+                                    "name": "IndexAccess",
+                                    "src": "895:8:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "isStructConstructorCall": true,
+                                      "lValueRequested": false,
+                                      "names": [
+                                        null
+                                      ],
+                                      "type": "struct CarSharing.Seat memory",
+                                      "type_conversion": false
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": [
+                                            {
+                                              "typeIdentifier": "t_uint256",
+                                              "typeString": "uint256"
+                                            },
+                                            {
+                                              "typeIdentifier": "t_bool",
+                                              "typeString": "bool"
+                                            },
+                                            {
+                                              "typeIdentifier": "t_address",
+                                              "typeString": "address"
+                                            }
+                                          ],
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 11,
+                                          "type": "type(struct CarSharing.Seat storage pointer)",
+                                          "value": "Seat"
+                                        },
+                                        "id": 66,
+                                        "name": "Identifier",
+                                        "src": "906:4:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 54,
+                                          "type": "uint256",
+                                          "value": "i"
+                                        },
+                                        "id": 67,
+                                        "name": "Identifier",
+                                        "src": "911:1:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "hexvalue": "74727565",
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "lValueRequested": false,
+                                          "subdenomination": null,
+                                          "token": "bool",
+                                          "type": "bool",
+                                          "value": "true"
+                                        },
+                                        "id": 68,
+                                        "name": "Literal",
+                                        "src": "914:4:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 37,
+                                          "type": "address",
+                                          "value": "ownerAddress"
+                                        },
+                                        "id": 69,
+                                        "name": "Identifier",
+                                        "src": "920:12:0"
+                                      }
+                                    ],
+                                    "id": 70,
+                                    "name": "FunctionCall",
+                                    "src": "906:27:0"
+                                  }
+                                ],
+                                "id": 71,
+                                "name": "Assignment",
+                                "src": "895:38:0"
+                              }
+                            ],
+                            "id": 72,
+                            "name": "ExpressionStatement",
+                            "src": "895:38:0"
+                          }
+                        ],
+                        "id": 73,
+                        "name": "Block",
+                        "src": "880:65:0"
+                      }
+                    ],
+                    "id": 74,
+                    "name": "ForStatement",
+                    "src": "842:103:0"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 42
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 46,
+                          "type": "struct CarSharing.Seat memory[] memory",
+                          "value": "seats"
+                        },
+                        "id": 75,
+                        "name": "Identifier",
+                        "src": "962:5:0"
+                      }
+                    ],
+                    "id": 76,
+                    "name": "Return",
+                    "src": "955:12:0"
+                  }
+                ],
+                "id": 77,
+                "name": "Block",
+                "src": "776:199:0"
+              }
+            ],
+            "id": 78,
+            "name": "FunctionDefinition",
+            "src": "667:308:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addJourney",
+              "scope": 110,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_departure",
+                      "scope": 109,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 79,
+                        "name": "ElementaryTypeName",
+                        "src": "1003:6:0"
+                      }
+                    ],
+                    "id": 80,
+                    "name": "VariableDeclaration",
+                    "src": "1003:24:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_arrival",
+                      "scope": 109,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 81,
+                        "name": "ElementaryTypeName",
+                        "src": "1039:6:0"
+                      }
+                    ],
+                    "id": 82,
+                    "name": "VariableDeclaration",
+                    "src": "1039:22:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_description",
+                      "scope": 109,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 83,
+                        "name": "ElementaryTypeName",
+                        "src": "1073:6:0"
+                      }
+                    ],
+                    "id": 84,
+                    "name": "VariableDeclaration",
+                    "src": "1073:26:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_seatNumber",
+                      "scope": 109,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 85,
+                        "name": "ElementaryTypeName",
+                        "src": "1111:4:0"
+                      }
+                    ],
+                    "id": 86,
+                    "name": "VariableDeclaration",
+                    "src": "1111:16:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_seats",
+                      "scope": 109,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct CarSharing.Seat[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "struct CarSharing.Seat[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Seat",
+                              "referencedDeclaration": 11,
+                              "type": "struct CarSharing.Seat"
+                            },
+                            "id": 87,
+                            "name": "UserDefinedTypeName",
+                            "src": "1138:4:0"
+                          }
+                        ],
+                        "id": 88,
+                        "name": "ArrayTypeName",
+                        "src": "1138:6:0"
+                      }
+                    ],
+                    "id": 89,
+                    "name": "VariableDeclaration",
+                    "src": "1138:20:0"
+                  }
+                ],
+                "id": 90,
+                "name": "ParameterList",
+                "src": "1002:157:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 91,
+                "name": "ParameterList",
+                "src": "1168:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4,
+                              "type": "uint256",
+                              "value": "jouneyCount"
+                            },
+                            "id": 92,
+                            "name": "Identifier",
+                            "src": "1179:11:0"
+                          }
+                        ],
+                        "id": 93,
+                        "name": "UnaryOperation",
+                        "src": "1179:14:0"
+                      }
+                    ],
+                    "id": 94,
+                    "name": "ExpressionStatement",
+                    "src": "1179:14:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct CarSharing.Journey storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct CarSharing.Journey storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 33,
+                                  "type": "mapping(uint256 => struct CarSharing.Journey storage ref)",
+                                  "value": "candidates"
+                                },
+                                "id": 95,
+                                "name": "Identifier",
+                                "src": "1204:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4,
+                                  "type": "uint256",
+                                  "value": "jouneyCount"
+                                },
+                                "id": 96,
+                                "name": "Identifier",
+                                "src": "1215:11:0"
+                              }
+                            ],
+                            "id": 97,
+                            "name": "IndexAccess",
+                            "src": "1204:23:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct CarSharing.Journey memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_array$_t_struct$_Seat_$11_memory_$dyn_memory_ptr",
+                                      "typeString": "struct CarSharing.Seat memory[] memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "type(struct CarSharing.Journey storage pointer)",
+                                  "value": "Journey"
+                                },
+                                "id": 98,
+                                "name": "Identifier",
+                                "src": "1230:7:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4,
+                                  "type": "uint256",
+                                  "value": "jouneyCount"
+                                },
+                                "id": 99,
+                                "name": "Identifier",
+                                "src": "1238:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 82,
+                                  "type": "string memory",
+                                  "value": "_arrival"
+                                },
+                                "id": 100,
+                                "name": "Identifier",
+                                "src": "1251:8:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 80,
+                                  "type": "string memory",
+                                  "value": "_departure"
+                                },
+                                "id": 101,
+                                "name": "Identifier",
+                                "src": "1261:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 84,
+                                  "type": "string memory",
+                                  "value": "_description"
+                                },
+                                "id": 102,
+                                "name": "Identifier",
+                                "src": "1273:12:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 86,
+                                  "type": "uint256",
+                                  "value": "_seatNumber"
+                                },
+                                "id": 103,
+                                "name": "Identifier",
+                                "src": "1287:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 89,
+                                  "type": "struct CarSharing.Seat memory[] memory",
+                                  "value": "_seats"
+                                },
+                                "id": 104,
+                                "name": "Identifier",
+                                "src": "1300:6:0"
+                              }
+                            ],
+                            "id": 105,
+                            "name": "FunctionCall",
+                            "src": "1230:77:0"
+                          }
+                        ],
+                        "id": 106,
+                        "name": "Assignment",
+                        "src": "1204:103:0"
+                      }
+                    ],
+                    "id": 107,
+                    "name": "ExpressionStatement",
+                    "src": "1204:103:0"
+                  }
+                ],
+                "id": 108,
+                "name": "Block",
+                "src": "1168:147:0"
+              }
+            ],
+            "id": 109,
+            "name": "FunctionDefinition",
+            "src": "983:332:0"
+          }
+        ],
+        "id": 110,
+        "name": "ContractDefinition",
+        "src": "108:1666:0"
+      }
+    ],
+    "id": 111,
+    "name": "SourceUnit",
+    "src": "33:1743:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7641aD281a1CA5d439d2CE35aA1b9019740575D6",
+      "transactionHash": "0xdf247ef545bb6ebbb81e75933082fdf15e7ad061ff80458b62abdc5638d15e3c"
+    }
+  },
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-03-08T15:48:11.430Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

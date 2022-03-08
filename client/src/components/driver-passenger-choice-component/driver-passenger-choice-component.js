@@ -25,10 +25,10 @@ class DriverPassengerChoice extends Component {
     
     render() {
         return (
-            <div class="compRoot">
+            <div className="compRoot">
                 <h1>Please choose your situation</h1>
-                <button class="button-36" role="button" onClick={this.onPassengerClickEvent}>Passenger</button>
-                <button class="button-36" role="button"onClick={this.onSellerClickEvent}>Driver or Reseller</button>
+                <button className="button-36" role="button" onClick={this.onPassengerClickEvent}>Passenger</button>
+                <button className="button-36" role="button"onClick={this.onSellerClickEvent}>Driver or Reseller</button>
             </div>
         );
     }
